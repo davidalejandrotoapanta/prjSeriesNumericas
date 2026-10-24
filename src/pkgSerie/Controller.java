@@ -120,22 +120,40 @@ public class Controller {
                     System.out.println("Saliendo");
                     break;
                 case 1: 
+                System.out.print("SN01: ");
+                seriesNumericas.g4Serie01FIbonacci(numeroTerminos);
                     break;
                 case 2:
+                    System.out.print("SN02: ");
+                    seriesNumericas.g4Serie02ImparesCero(numeroTerminos);
                     break;
                 case 3: 
+                System.out.print("SN03: ");
+                seriesNumericas.g4Serie03FibonacciSobreIpares(numeroTerminos);
                     break;
                 case 4: 
+                System.out.print("SN04: ");
+                seriesNumericas.g4Serie04FibonacciSobrePares(numeroTerminos);
                     break;
                 case 5: 
+                    System.out.print("SN05: ");
+                    seriesNumericas.g4Serie05NumerosPrimos(numeroTerminos);
                     break;
                 case 6: 
+                    System.out.print("SN06: ");
+                    seriesNumericas.g4Serie06CuadradosPerfectos(numeroTerminos);
                     break;
                 case 7: 
+                    System.out.print("SN07: ");
+                    seriesNumericas.g4Serie07ProgresionArimetica(numeroTerminos);
                     break;
                 case 8: 
+                    System.out.print("SN08: ");
+                    seriesNumericas.g4Serie08ProgresionArimetica(numeroTerminos);
                     break;
                 case 9: 
+                System.out.print("SN09: ");
+                seriesNumericas.g4Serie09Potencia(numeroTerminos);
                     break;
                 case 10:
                     break;
