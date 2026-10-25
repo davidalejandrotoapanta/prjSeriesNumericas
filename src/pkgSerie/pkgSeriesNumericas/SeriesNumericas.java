@@ -122,6 +122,35 @@ public class SeriesNumericas {
         System.out.println();
     }
 
+    /**
+     * Imprime la serie de números crecientes en la que su variación cambia linealmente de 1 en 1 hasta el número de términos especificado.
+     * @param numeroTerminos
+     */
+    public void imprimirSerieCrecientes(int numeroTerminos){
+        System.out.println("Serie de numeros crecientes:");
+
+        for(int contador=1; contador <= numeroTerminos; contador++){
+            int crecientes= ((int)Math.pow(contador, 2) - contador + 2)/2;
+            System.out.print(crecientes + " ");
+        }
+        System.out.println();
+    }
+
+    public void imprimirAlternancias(int numeroTerminos){
+        int alternancia=0;
+        System.out.println("Serie de alternancias:");
+
+        for(int contador=1; contador <= numeroTerminos; contador++){
+            
+            if(contador % 2 == 0){
+                alternancia=(int)(Math.pow(contador, 3));
+            } else {
+                alternancia=(int)(Math.pow(contador, 2));
+            }
+            System.out.print(alternancia + " ");
+        }
+        System.out.println();
+    }
 
 
 }

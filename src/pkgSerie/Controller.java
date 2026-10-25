@@ -119,6 +119,8 @@ public class Controller {
             System.out.println("15. Serie de cuadrados desplazados");
             System.out.println("16. Serie de repunidades");
             System.out.println("17. Serie de numeros Lucas");
+            System.out.println("18. Serie de numeros crecientes");
+            System.out.println("19. Serie de alternancias");
             System.out.print("Opcion:");
 
             opcionNumericas = scanner.nextInt();
@@ -170,8 +172,10 @@ public class Controller {
                     seriesNumericas.imprimirNumerosLucas(numeroTerminos);
                     break;
                 case 18: 
+                    seriesNumericas.imprimirSerieCrecientes(numeroTerminos);
                     break;
                 case 19: 
+                    seriesNumericas.imprimirAlternancias(numeroTerminos);
                     break;
                 default:
                     System.out.println("Opcion no valida");
