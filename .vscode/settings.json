@@ -4,5 +4,7 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "java.project.explorer.showNonJavaResources": false
+    "java.project.explorer.showNonJavaResources": false,
+    "cSpell.language": "en,es",
+    "cSpell.caseSensitive": false
 }
