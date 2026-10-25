@@ -80,6 +80,7 @@ public class Controller {
                 case 9: 
                     break;
                 case 10:
+                    seriesCaracteres.g4LetrasconRepeticion(numeroTerminos);
                     break; 
                 case 11: 
                     break;
