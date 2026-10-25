@@ -104,6 +104,10 @@ public class SeriesNumericas {
         System.out.println();
     }
 
+    /**
+     * Imprime la serie de números Lucas hasta el número de términos especificado.
+     * @param numeroTerminos
+     */
     public void imprimirNumerosLucas(int numeroTerminos){
         System.out.println("Serie de numeros Lucas:");
 
