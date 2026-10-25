@@ -5,6 +5,118 @@ public class SeriesCaracteres {
      * Método para generar una serie de letras con repetición.
      * @param numeroTerminos Número de términos a generar en la serie.
      */
+    
+    // SC01. Signos alternados
+    public void gr4Serie01Signosalternados(int n) {
+        for (int i = 0; i < n; i++) {
+            if (i % 2 == 0) {
+                System.out.print("+ ");
+            } else {
+                System.out.print("- ");
+            }
+        }
+        System.out.println();
+    }
+
+    // SC02. Grupos de signos
+    public void gr4Serie02Gruposdesignos(int n) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("+");
+            }
+            System.out.print(", ");
+        }
+        System.out.println();
+    }
+
+    // SC03. Grupos de signos
+    public void gr4Serie03Gruposdesignos(int n) {
+        int a = 2;
+        int b = 3;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < a; j++) {
+                System.out.print("+");
+            }
+            System.out.print(", ");
+
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+        System.out.println();
+    }
+
+    // SC04. Operadores cíclicos
+    public void gr4Serie04Operadoresciclicos(int n) {
+        char[] operadores = {'+', '-', '*', '/'};
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(operadores[i % 4] + ", ");
+        }
+        System.out.println();
+    }
+
+    // SC05. Indicador direccional cíclico
+    public void gr4Serie05Indicadordireccionalciclico(int n) {
+        String[] direcciones = {"\\", "|", "/", "-", "|"};
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(direcciones[i % 5] + ", ");
+        }
+        System.out.println();
+    }
+
+    // SC06. Letras consecutivas
+    public void gr4Serie06Letrasconsecutivas(int n) {
+        for (int i = 0; i < n; i++) {
+            System.out.print((char) ('a' + i) + ", ");
+        }
+        System.out.println();
+    }
+
+    // SC07. Letra y signo alternados
+    public void gr4Serie07Letraysignoalternados(int n) {
+        char signo = '+';
+
+        for (int i = 0; i < n; i++) {
+            System.out.print((char) ('a' + i) + ", ");
+            System.out.print(signo + ", ");
+
+            if (signo == '+') {
+                signo = '-';
+            } else {
+                signo = '+';
+            }
+        }
+        System.out.println();
+    }
+
+    // SC08. Letras repetidas
+    public void gr4Serie08Letrasrepetidas(int n) {
+        for (int i = 0; i < n; i++) {
+            char letra = (char) ('a' + i);
+
+            for (int j = 0; j < 2 * (i + 1); j++) {
+                System.out.print(letra);
+            }
+            System.out.print(", ");
+        }
+        System.out.println();
+    }
+
+    // SC09. Letras repetidas
+    public void gr4Serie09Letrasrepetidas(int n) {
+        for (int i = 0; i < n; i++) {
+            char letra = (char) ('a' + i);
+
+            for (int j = 0; j < 2 * i + 1; j++) {
+                System.out.print(letra);
+            }
+            System.out.print(", ");
+        }
+        System.out.println();
+    }
     public void g4LetrasconRepeticion(int numeroTerminos) {
         System.out.println("Letras con repeticion");
         for (int i = 0; i < numeroTerminos; i++){

@@ -53,6 +53,15 @@ public class Controller {
 
             System.out.println("\n Menu de Series de Caracteres");
             System.out.println("0. Salir");
+            System.out.println("1. Signos alternados");
+            System.out.println("2. Greupo de signos (+)");
+            System.out.println("3. SGrupo de signos (+)+1");
+            System.out.println("4. Operadpres cíclicos");
+            System.out.println("5. Indicador direccional ciclico");
+            System.out.println("6. Letras consecutivas");
+            System.out.println("7. Letra y signo alternados");
+            System.out.println("8. Letras repetidas");
+            System.out.println("9. Letras repetidas +1");
             System.out.println("10. Serie de letras con repetición");
             System.out.println("11. Serie de grupos de hashtags");
             System.out.println("12. Serie de vocales con repetición");
@@ -66,26 +75,35 @@ public class Controller {
             opcionCaracteres = scanner.nextInt();
 
             switch (opcionCaracteres) {
-                case 0:
+                 case 0:
                     System.out.println("Saliendo");
                     break;
                 case 1: 
+                    seriesCaracteres.gr4Serie01Signosalternados(numeroTerminos);
                     break;
                 case 2:
+                    seriesCaracteres.gr4Serie02Gruposdesignos(numeroTerminos);
                     break;
                 case 3: 
+                    seriesCaracteres.gr4Serie03Gruposdesignos(numeroTerminos);  
                     break;
                 case 4: 
+                    seriesCaracteres.gr4Serie04Operadoresciclicos(numeroTerminos); 
                     break;
                 case 5: 
+                    seriesCaracteres.gr4Serie05Indicadordireccionalciclico(numeroTerminos);  
                     break;
                 case 6: 
+                    seriesCaracteres.gr4Serie06Letrasconsecutivas(numeroTerminos);
                     break;
-                case 7: 
+                case 7:
+                    seriesCaracteres.gr4Serie07Letraysignoalternados(numeroTerminos); 
                     break;
                 case 8: 
+                    seriesCaracteres.gr4Serie08Letrasrepetidas(numeroTerminos);
                     break;
                 case 9: 
+                    seriesCaracteres.gr4Serie09Letrasrepetidas(numeroTerminos);
                     break;
                 case 10:
                     seriesCaracteres.g4LetrasconRepeticion(numeroTerminos);
