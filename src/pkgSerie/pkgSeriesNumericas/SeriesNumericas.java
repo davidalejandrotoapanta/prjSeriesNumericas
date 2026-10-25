@@ -30,6 +30,10 @@ public class SeriesNumericas {
         System.out.println();
     }
 
+    /**
+     * Imprime la serie de números triangulares hasta el número de términos especificado.
+     * @param numeroTerminos
+     */
     public void imprimirSerieTriangular(int numeroTerminos){
         System.out.println("Serie de numeros triangulares:");
 
