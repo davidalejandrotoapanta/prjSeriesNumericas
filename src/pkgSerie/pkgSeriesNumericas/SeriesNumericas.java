@@ -41,7 +41,7 @@ public class SeriesNumericas {
     public void g4Serie03FibonacciSobreIpares(int n){
         int a = 0, b = 1, impar = 1;
         for (int i = 0; i < n; i++) {
-           System.out.print(a + "/" + impar + (i < n - 1 ? ", " : "\n"));
+            System.out.print(a + "/" + impar + (i < n - 1 ? ", " : "\n"));
             int next = a + b;
             a = b;
             b = next;
@@ -71,7 +71,7 @@ public class SeriesNumericas {
      */
 
     public void g4Serie05NumerosPrimos(int n){
-       int count = 0, num = 2;
+        int count = 0, num = 2;
         while (count < n) {
             boolean esPrimo = true;
             for (int i = 2; i <= Math.sqrt(num); i++) {
@@ -279,6 +279,10 @@ public class SeriesNumericas {
         System.out.println();
     }
 
+    /**
+     * Imprime la serie de alternancias en la que los números impares son elevados al cuadrado y los números pares son elevados al cubo hasta el número de términos especificado.
+     * @param numeroTerminos
+     */
     public void imprimirAlternancias(int numeroTerminos){
         int alternancia=0;
         System.out.println("Serie de alternancias:");
