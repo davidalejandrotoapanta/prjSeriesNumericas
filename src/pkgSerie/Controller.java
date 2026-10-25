@@ -114,6 +114,11 @@ public class Controller {
             System.out.println("10. Serie de potencias de 3");
             System.out.println("11. Serie de numeros oblongos");
             System.out.println("12. Serie de numeros triangulares");
+            System.out.println("13. Serie de numeros factoriales");
+            System.out.println("14. Serie de signos alternos");
+            System.out.println("15. Serie de cuadrados desplazados");
+            System.out.println("16. Serie de repunidades");
+            System.out.println("17. Serie de numeros Lucas");
             System.out.print("Opcion:");
 
             opcionNumericas = scanner.nextInt();
@@ -150,14 +155,19 @@ public class Controller {
                     seriesNumericas.imprimirSerieTriangular(numeroTerminos);
                     break;
                 case 13: 
+                    seriesNumericas.imprimirSerieFactorial(numeroTerminos);
                     break;
                 case 14: 
+                    seriesNumericas.imprimirSignosAlternos(numeroTerminos);
                     break;
                 case 15: 
+                    seriesNumericas.imprimirCuadradosDesplazados(numeroTerminos);
                     break;
                 case 16: 
+                    seriesNumericas.imprimirRepunidades(numeroTerminos);
                     break;
                 case 17: 
+                    seriesNumericas.imprimirNumerosLucas(numeroTerminos);
                     break;
                 case 18: 
                     break;
