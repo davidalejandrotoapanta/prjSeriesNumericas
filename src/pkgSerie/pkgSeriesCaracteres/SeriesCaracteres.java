@@ -98,6 +98,10 @@ public class SeriesCaracteres {
             System.out.print(" ");
         }
     }
+    /**
+     * Método para generar una serie de símbolos.
+     * @param numeroTerminos Número de términos a generar en la serie.
+     */
     public void g4Simbolos(int numeroTerminos) {
         System.out.println("Simbolos");
         char[] simbolos = {'+', '-', '*', '/', '%'};
