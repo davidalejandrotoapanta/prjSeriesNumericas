@@ -83,18 +83,25 @@ public class Controller {
                     seriesCaracteres.g4LetrasconRepeticion(numeroTerminos);
                     break; 
                 case 11: 
+                    seriesCaracteres.g4GruposdeHashtags(numeroTerminos);
                     break;
                 case 12: 
+                    seriesCaracteres.g4VocalesRepetidas(numeroTerminos);
                     break;
                 case 13: 
+                    seriesCaracteres.g4LetrarepetidaCreciente(numeroTerminos);
                     break;
                 case 14: 
+                    seriesCaracteres.g4Alfabeto(numeroTerminos);
                     break;
-                case 15: 
+                case 15:
+                    seriesCaracteres.g4Bloques(numeroTerminos);
                     break;
                 case 16: 
+                    seriesCaracteres.g4Alternancia(numeroTerminos);
                     break;
                 case 17: 
+                    seriesCaracteres.g4Simbolos(numeroTerminos);
                     break;
                 default:
                     System.out.println("Opcion no valida");
