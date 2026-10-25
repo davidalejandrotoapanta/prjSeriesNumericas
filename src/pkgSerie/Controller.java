@@ -111,6 +111,9 @@ public class Controller {
 
             System.out.println("\n Menu de Series Numericas");
             System.out.println("0. Salir");
+            System.out.println("10. Serie de potencias de 3");
+            System.out.println("11. Serie de numeros oblongos");
+            System.out.println("12. Serie de numeros triangulares");
             System.out.print("Opcion:");
 
             opcionNumericas = scanner.nextInt();
@@ -138,10 +141,13 @@ public class Controller {
                 case 9: 
                     break;
                 case 10:
+                    seriesNumericas.imprimirPotencias3(numeroTerminos);
                     break;
                 case 11: 
+                    seriesNumericas.imprimirNumerosOblongos(numeroTerminos);
                     break;
                 case 12: 
+                    seriesNumericas.imprimirSerieTriangular(numeroTerminos);
                     break;
                 case 13: 
                     break;
