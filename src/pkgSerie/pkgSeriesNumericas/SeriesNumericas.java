@@ -138,18 +138,11 @@ public class SeriesNumericas {
         }
     }
 
-    
-
-
-
-
-
-
     /**
      * Imprime la serie de potencias de 3 hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirPotencias3(int numeroTerminos) {
+    public void g4imprimirPotencias3(int numeroTerminos) {
         System.out.println("Serie de potencias de 3:");
 
         for (int contador=1; contador <= numeroTerminos; contador++){
@@ -163,7 +156,7 @@ public class SeriesNumericas {
      * Imprime la serie de números oblongos hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirNumerosOblongos(int numeroTerminos) {
+    public void g4imprimirNumerosOblongos(int numeroTerminos) {
         System.out.println("Serie de numeros oblongos:");
 
         for (int contador=1; contador <= numeroTerminos; contador++){
@@ -177,7 +170,7 @@ public class SeriesNumericas {
      * Imprime la serie de números triangulares hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirSerieTriangular(int numeroTerminos){
+    public void g4imprimirSerieTriangular(int numeroTerminos){
         System.out.println("Serie de numeros triangulares:");
 
         for (int contador=1; contador <= numeroTerminos; contador++){
@@ -191,7 +184,7 @@ public class SeriesNumericas {
      * Imprime la serie de números factoriales hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirSerieFactorial(int numeroTerminos){
+    public void g4imprimirSerieFactorial(int numeroTerminos){
         int factorial=1;
         System.out.println("Serie de numeros factoriales:");
 
@@ -206,7 +199,7 @@ public class SeriesNumericas {
      * Imprime una serie de numeros que si son pares sean negativos y si son impares sean positivos.
      * @param numeroTerminos
      */
-    public void imprimirSignosAlternos(int numeroTerminos){
+    public void g4imprimirSignosAlternos(int numeroTerminos){
         System.out.println("Serie de signos alternos:");
 
         for(int contador=1; contador <= numeroTerminos; contador++){
@@ -223,7 +216,7 @@ public class SeriesNumericas {
      * Imprime la serie de cuadrados desplazados hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirCuadradosDesplazados(int numeroTerminos){
+    public void g4imprimirCuadradosDesplazados(int numeroTerminos){
         System.out.println("Serie de cuadrados desplazados:");
 
         for(int contador=1; contador <= numeroTerminos; contador++){
@@ -237,7 +230,7 @@ public class SeriesNumericas {
      * Imprime la serie de repunidades hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirRepunidades(int numeroTerminos){
+    public void g4imprimirRepunidades(int numeroTerminos){
         System.out.println("Serie de repunidades:");
 
         for(int contador=1; contador <= numeroTerminos; contador++){
@@ -251,7 +244,7 @@ public class SeriesNumericas {
      * Imprime la serie de números Lucas hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirNumerosLucas(int numeroTerminos){
+    public void g4imprimirNumerosLucas(int numeroTerminos){
         System.out.println("Serie de numeros Lucas:");
 
         int a=2, b=1, c=0;
@@ -269,7 +262,7 @@ public class SeriesNumericas {
      * Imprime la serie de números crecientes en la que su variación cambia linealmente de 1 en 1 hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirSerieCrecientes(int numeroTerminos){
+    public void g4imprimirSerieCrecientes(int numeroTerminos){
         System.out.println("Serie de numeros crecientes:");
 
         for(int contador=1; contador <= numeroTerminos; contador++){
@@ -283,7 +276,7 @@ public class SeriesNumericas {
      * Imprime la serie de alternancias en la que los números impares son elevados al cuadrado y los números pares son elevados al cubo hasta el número de términos especificado.
      * @param numeroTerminos
      */
-    public void imprimirAlternancias(int numeroTerminos){
+    public void g4imprimirAlternancias(int numeroTerminos){
         int alternancia=0;
         System.out.println("Serie de alternancias:");
 

@@ -191,34 +191,34 @@ public class Controller {
                 seriesNumericas.g4Serie09Potencia(numeroTerminos);
                     break;
                 case 10:
-                    seriesNumericas.imprimirPotencias3(numeroTerminos);
+                    seriesNumericas.g4imprimirPotencias3(numeroTerminos);
                     break;
                 case 11: 
-                    seriesNumericas.imprimirNumerosOblongos(numeroTerminos);
+                    seriesNumericas.g4imprimirNumerosOblongos(numeroTerminos);
                     break;
                 case 12: 
-                    seriesNumericas.imprimirSerieTriangular(numeroTerminos);
+                    seriesNumericas.g4imprimirSerieTriangular(numeroTerminos);
                     break;
                 case 13: 
-                    seriesNumericas.imprimirSerieFactorial(numeroTerminos);
+                    seriesNumericas.g4imprimirSerieFactorial(numeroTerminos);
                     break;
                 case 14: 
-                    seriesNumericas.imprimirSignosAlternos(numeroTerminos);
+                    seriesNumericas.g4imprimirSignosAlternos(numeroTerminos);
                     break;
                 case 15: 
-                    seriesNumericas.imprimirCuadradosDesplazados(numeroTerminos);
+                    seriesNumericas.g4imprimirCuadradosDesplazados(numeroTerminos);
                     break;
                 case 16: 
-                    seriesNumericas.imprimirRepunidades(numeroTerminos);
+                    seriesNumericas.g4imprimirRepunidades(numeroTerminos);
                     break;
                 case 17: 
-                    seriesNumericas.imprimirNumerosLucas(numeroTerminos);
+                    seriesNumericas.g4imprimirNumerosLucas(numeroTerminos);
                     break;
                 case 18: 
-                    seriesNumericas.imprimirSerieCrecientes(numeroTerminos);
+                    seriesNumericas.g4imprimirSerieCrecientes(numeroTerminos);
                     break;
                 case 19: 
-                    seriesNumericas.imprimirAlternancias(numeroTerminos);
+                    seriesNumericas.g4imprimirAlternancias(numeroTerminos);
                     break;
                 default:
                     System.out.println("Opcion no valida");
