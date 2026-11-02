@@ -6,7 +6,7 @@ public class SeriesCaracteres {
      * @param numeroTerminos Número de términos a generar en la serie.
      */
     public void gr4Serie01Signosalternados(int numeroTerminos) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             if (i % 2 == 0) {
                 System.out.print("+ ");
             } else {
@@ -21,7 +21,7 @@ public class SeriesCaracteres {
      * @param numeroTerminos Número de términos a generar en la serie.
      */
     public void gr4Serie02Gruposdesignos(int numeroTerminos) {
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= numeroTerminos; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print("+");
             }
@@ -38,7 +38,7 @@ public class SeriesCaracteres {
         int a = 2;
         int b = 3;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             for (int j = 0; j < a; j++) {
                 System.out.print("+");
             }
@@ -58,7 +58,7 @@ public class SeriesCaracteres {
     public void gr4Serie04Operadoresciclicos(int numeroTerminos) {
         char[] operadores = {'+', '-', '*', '/'};
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             System.out.print(operadores[i % 4] + ", ");
         }
         System.out.println();
@@ -71,7 +71,7 @@ public class SeriesCaracteres {
     public void gr4Serie05Indicadordireccionalciclico(int numeroTerminos) {
         String[] direcciones = {"\\", "|", "/", "-", "|"};
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             System.out.print(direcciones[i % 5] + ", ");
         }
         System.out.println();
@@ -82,7 +82,7 @@ public class SeriesCaracteres {
      * @param numeroTerminos Número de términos a generar en la serie.
      */
     public void gr4Serie06Letrasconsecutivas(int numeroTerminos) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             System.out.print((char) ('a' + i) + ", ");
         }
         System.out.println();
@@ -95,7 +95,7 @@ public class SeriesCaracteres {
     public void gr4Serie07Letraysignoalternados(int numeroTerminos) {
         char signo = '+';
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             System.out.print((char) ('a' + i) + ", ");
             System.out.print(signo + ", ");
 
@@ -113,7 +113,7 @@ public class SeriesCaracteres {
      * @param numeroTerminos Número de términos a generar en la serie.
      */
     public void gr4Serie08Letrasrepetidas(int numeroTerminos) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             char letra = (char) ('a' + i);
 
             for (int j = 0; j < 2 * (i + 1); j++) {
@@ -129,7 +129,7 @@ public class SeriesCaracteres {
      * @param numeroTerminos Número de términos a generar en la serie.
      */
     public void gr4Serie09Letrasrepetidas(int numeroTerminos) {
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numeroTerminos; i++) {
             char letra = (char) ('a' + i);
 
             for (int j = 0; j < 2 * i + 1; j++) {
