@@ -1,0 +1,78 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+package pkgSerie.pkgSeriesCaracteres;
+
+public class SeriesCaracteres {
+   private int numeroTerminos;
+
+   public SeriesCaracteres(int var1) {
+      throw new Error("Unresolved compilation problem: \n\tSyntax error, insert \"}\" to complete ClassBody\n");
+   }
+
+   public void gr4Serie01Signosalternados() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie02Gruposdesignos() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie03Gruposdesignos() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie04Operadoresciclicos() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie05Indicadordireccionalciclico() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie06Letrasconsecutivas() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie07Letraysignoalternados() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie08Letrasrepetidas() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void gr4Serie09Letrasrepetidas() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4LetrasconRepeticion() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4GruposdeHashtags() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4VocalesRepetidas() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4LetrarepetidaCreciente() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4Alfabeto() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4Bloques() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4Alternancia() {
+      throw new Error("Unresolved compilation problem: \n");
+   }
+
+   public void g4Simbolos() {
+      throw new Error("Unresolved compilation problem: \n\tSyntax error, insert \"}\" to complete ClassBody\n");
+   }
+}
