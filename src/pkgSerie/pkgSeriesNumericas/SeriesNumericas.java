@@ -2,14 +2,28 @@ package pkgSerie.pkgSeriesNumericas;
 
 
 public class SeriesNumericas {
+    private int numeroTerminos=-1;
+
+    /**
+     * Constructor de la clase SeriesNumericas.
+     * @param numeroTerminos
+     */
+    public SeriesNumericas(int numeroTerminos) {
+        if (numeroTerminos <= 0) {
+            System.out.println(" Warning: Términos inválidos. Se asigna 1 por defecto.");
+            this.numeroTerminos = 1;
+        } else {
+            this.numeroTerminos = numeroTerminos;
+        }
+    }
+
+
     /**
      * Método para generar la serie de Fibonacci hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie de Fibonacci.
      */
-    public void g4Serie01FIbonacci(int n){
+    public void g4Serie01FIbonacci(){
         int a = 0, b = 1;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < this.numeroTerminos; i++) {
             System.out.print(a + " ");
             int next = a + b;
             a = b;
@@ -19,12 +33,10 @@ public class SeriesNumericas {
     }
     /**
      * Método para generar una serie de números impares y ceros hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie02ImparesCero(int n){
-        for (int i = 0; i < n; i++) {
+    public void g4Serie02ImparesCero(){
+        for (int i = 0; i < this.numeroTerminos; i++) {
             if (i % 2 == 0) {
                 System.out.print("0 ");
             } else {
@@ -34,14 +46,12 @@ public class SeriesNumericas {
     }
     /**
      * Método para generar una serie que combina la serie de Fibonacci y los números impares hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie03FibonacciSobreIpares(int n){
+    public void g4Serie03FibonacciSobreIpares(){
         int a = 0, b = 1, impar = 1;
-        for (int i = 0; i < n; i++) {
-            System.out.print(a + "/" + impar + (i < n - 1 ? ", " : "\n"));
+        for (int i = 0; i < this.numeroTerminos; i++) {
+            System.out.print(a + "/" + impar + (i < this.numeroTerminos - 1 ? ", " : "\n"));
             int next = a + b;
             a = b;
             b = next;
@@ -50,14 +60,12 @@ public class SeriesNumericas {
     }
     /**
      * Método para generar una serie que combina la serie de Fibonacci y los números pares hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie04FibonacciSobrePares(int n){
+    public void g4Serie04FibonacciSobrePares(){
         int a = 0, b = 1, par = 2;
-        for (int i = 0; i < n; i++) {
-            System.out.print(a + "/" + par + (i < n - 1 ? ", " : "\n"));
+        for (int i = 0; i < this.numeroTerminos; i++) {
+            System.out.print(a + "/" + par + (i < this.numeroTerminos - 1 ? ", " : "\n"));
             int next = a + b;
             a = b;
             b = next;
@@ -66,13 +74,11 @@ public class SeriesNumericas {
     }
     /**
      * Método para generar una serie de números primos hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie05NumerosPrimos(int n){
+    public void g4Serie05NumerosPrimos(){
         int count = 0, num = 2;
-        while (count < n) {
+        while (count < this.numeroTerminos) {
             boolean esPrimo = true;
             for (int i = 2; i <= Math.sqrt(num); i++) {
                 if (num % i == 0) {
@@ -81,7 +87,7 @@ public class SeriesNumericas {
                 }
             }
             if (esPrimo) {
-                System.out.print(num + (count < n - 1 ? ", " : "\n"));
+                System.out.print(num + (count < this.numeroTerminos - 1 ? ", " : "\n"));
                 count++;
             }
             num++;
@@ -89,63 +95,52 @@ public class SeriesNumericas {
     }
     /**
      * Método para generar una serie de cuadrados perfectos hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie06CuadradosPerfectos(int n){
-        for (int i = 1; i <= n; i++) {
-            System.out.print((i * i) + (i < n ? ", " : "\n"));
+    public void g4Serie06CuadradosPerfectos(){
+        for (int i = 1; i <= this.numeroTerminos; i++) {
+            System.out.print((i * i) + (i < this.numeroTerminos ? ", " : "\n"));
         }
     }
     /**
      * Método para generar una progresión aritmética con diferencia común de 3 hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie07ProgresionArimetica(int n){
+    public void g4Serie07ProgresionArimetica(){
         int val=1;
-        for (int i = 0; i < n; i++) {
-            System.out.print(val + (i < n - 1 ? ", " : "\n"));
+        for (int i = 0; i < this.numeroTerminos; i++) {
+            System.out.print(val + (i < this.numeroTerminos - 1 ? ", " : "\n"));
             val += 3; 
         }
     }
     /**
      * Método para generar una progresión aritmética con diferencia común de 5 hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie08ProgresionArimetica(int n){
+    public void g4Serie08ProgresionArimetica(){
         int val=3;
-        for (int i = 0; i < n; i++) {
-            System.out.print(val + (i < n - 1 ? ", " : "\n"));
+        for (int i = 0; i < this.numeroTerminos; i++) {
+            System.out.print(val + (i < this.numeroTerminos - 1 ? ", " : "\n"));
             val += 5; 
         }
     }
     /**
      * Método para generar una serie de potencias de 2 hasta n términos.
-     *
-     * @param n Número de términos a generar en la serie.
      */
 
-    public void g4Serie09Potencia(int n){
+    public void g4Serie09Potencia(){
         int val=2;
-        for (int i = 0; i < n; i++) {
-            System.out.print(val + (i < n - 1 ? ", " : "\n"));
+        for (int i = 0; i < this.numeroTerminos; i++) {
+            System.out.print(val + (i < this.numeroTerminos - 1 ? ", " : "\n"));
             val *= 2; 
         }
     }
 
     /**
-     * Imprime la serie de potencias de 3 hasta el número de términos especificado.
-     * @param numeroTerminos
+     * Imprime la serie de potencias de 3 hasta el número de términos especificado.   
      */
-    public void g4imprimirPotencias3(int numeroTerminos) {
-        System.out.println("Serie de potencias de 3:");
-
-        for (int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirPotencias3() {
+        for (int contador=1; contador <= this.numeroTerminos; contador++){
             int potencia = (int) Math.pow(3, contador);
             System.out.print(potencia + " ");
         }
@@ -154,12 +149,9 @@ public class SeriesNumericas {
 
     /**
      * Imprime la serie de números oblongos hasta el número de términos especificado.
-     * @param numeroTerminos
      */
-    public void g4imprimirNumerosOblongos(int numeroTerminos) {
-        System.out.println("Serie de numeros oblongos:");
-
-        for (int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirNumerosOblongos() {
+        for (int contador=1; contador <= this.numeroTerminos; contador++){
             int oblongos = contador * (contador + 1);
             System.out.print(oblongos + " ");
         }
@@ -168,12 +160,9 @@ public class SeriesNumericas {
 
     /**
      * Imprime la serie de números triangulares hasta el número de términos especificado.
-     * @param numeroTerminos
      */
-    public void g4imprimirSerieTriangular(int numeroTerminos){
-        System.out.println("Serie de numeros triangulares:");
-
-        for (int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirSerieTriangular(){
+        for (int contador=1; contador <= this.numeroTerminos; contador++){
             int triangular = contador * (contador + 1) / 2;
             System.out.print(triangular + " ");
         }
@@ -181,14 +170,12 @@ public class SeriesNumericas {
     }
 
     /**
-     * Imprime la serie de números factoriales hasta el número de términos especificado.
-     * @param numeroTerminos
+     * Imprime la serie de números factoriales hasta el número de términos especificado. 
      */
-    public void g4imprimirSerieFactorial(int numeroTerminos){
+    public void g4imprimirSerieFactorial(){
         int factorial=1;
-        System.out.println("Serie de numeros factoriales:");
 
-        for(int contador=1; contador <= numeroTerminos; contador++){
+        for(int contador=1; contador <= this.numeroTerminos; contador++){
             factorial=factorial*contador;
             System.out.print(factorial + " ");
         }
@@ -196,13 +183,10 @@ public class SeriesNumericas {
     }
 
     /**
-     * Imprime una serie de numeros que si son pares sean negativos y si son impares sean positivos.
-     * @param numeroTerminos
+     * Imprime una serie de numeros que si son pares sean negativos y si son impares sean positivos. 
      */
-    public void g4imprimirSignosAlternos(int numeroTerminos){
-        System.out.println("Serie de signos alternos:");
-
-        for(int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirSignosAlternos(){
+        for(int contador=1; contador <= this.numeroTerminos; contador++){
             if(contador % 2 == 0){
                 System.out.print(contador + " ");
             } else {
@@ -214,12 +198,9 @@ public class SeriesNumericas {
 
     /**
      * Imprime la serie de cuadrados desplazados hasta el número de términos especificado.
-     * @param numeroTerminos
      */
-    public void g4imprimirCuadradosDesplazados(int numeroTerminos){
-        System.out.println("Serie de cuadrados desplazados:");
-
-        for(int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirCuadradosDesplazados(){
+        for(int contador=1; contador <= this.numeroTerminos; contador++){
             int cuadradoDesplazado = 2*(int)(Math.pow(contador-1, 2));
             System.out.print(cuadradoDesplazado + " ");
         }
@@ -227,13 +208,10 @@ public class SeriesNumericas {
     }
 
     /**
-     * Imprime la serie de repunidades hasta el número de términos especificado.
-     * @param numeroTerminos
+     * Imprime la serie de repunidades hasta el número de términos especificado.   
      */
-    public void g4imprimirRepunidades(int numeroTerminos){
-        System.out.println("Serie de repunidades:");
-
-        for(int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirRepunidades(){
+        for(int contador=1; contador <= this.numeroTerminos; contador++){
             int repunidad = (int)(Math.pow(10, contador) - 1) / 9;
             System.out.print(repunidad + " ");
         }
@@ -242,14 +220,11 @@ public class SeriesNumericas {
 
     /**
      * Imprime la serie de números Lucas hasta el número de términos especificado.
-     * @param numeroTerminos
      */
-    public void g4imprimirNumerosLucas(int numeroTerminos){
-        System.out.println("Serie de numeros Lucas:");
-
+    public void g4imprimirNumerosLucas(){
         int a=2, b=1, c=0;
         System.out.print(a + " " + b + " ");
-        for(int contador=1; contador <= numeroTerminos; contador++){    
+        for(int contador=1; contador <= this.numeroTerminos; contador++){    
             c=a+b;
             System.out.print(c + " "); 
             a=b;
@@ -260,12 +235,9 @@ public class SeriesNumericas {
 
     /**
      * Imprime la serie de números crecientes en la que su variación cambia linealmente de 1 en 1 hasta el número de términos especificado.
-     * @param numeroTerminos
      */
-    public void g4imprimirSerieCrecientes(int numeroTerminos){
-        System.out.println("Serie de numeros crecientes:");
-
-        for(int contador=1; contador <= numeroTerminos; contador++){
+    public void g4imprimirSerieCrecientes(){
+        for(int contador=1; contador <= this.numeroTerminos; contador++){
             int crecientes= ((int)Math.pow(contador, 2) - contador + 2)/2;
             System.out.print(crecientes + " ");
         }
@@ -274,14 +246,11 @@ public class SeriesNumericas {
 
     /**
      * Imprime la serie de alternancias en la que los números impares son elevados al cuadrado y los números pares son elevados al cubo hasta el número de términos especificado.
-     * @param numeroTerminos
      */
-    public void g4imprimirAlternancias(int numeroTerminos){
+    public void g4imprimirAlternancias(){
         int alternancia=0;
-        System.out.println("Serie de alternancias:");
 
-        for(int contador=1; contador <= numeroTerminos; contador++){
-            
+        for(int contador=1; contador <= this.numeroTerminos; contador++){
             if(contador % 2 == 0){
                 alternancia=(int)(Math.pow(contador, 3));
             } else {
