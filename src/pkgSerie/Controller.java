@@ -3,10 +3,15 @@ package pkgSerie;
 import java.util.Scanner;
 import pkgSerie.pkgSeriesCaracteres.SeriesCaracteres;
 import pkgSerie.pkgSeriesNumericas.SeriesNumericas;
+import pkgSerie.pkgLoading.Loading;
+import pkgSerie.pkgRecursion.Recursion;
+import pkgSerie.pkgAutomatas.Automatas;
+import pkgSerie.pkgFiguras.Figuras;
+import pkgSerie.pkgCadenaCaracteres.CadenaCaracteres;
+import pkgSerie.pkgArrays.Arrays;
 
 public class Controller {
     private Scanner scanner;
-    private int numeroTerminos;
     private int opcionPrincipal;
 
     /**
@@ -14,7 +19,6 @@ public class Controller {
      */
     public Controller() {
         this.scanner = new Scanner(System.in);
-        this.numeroTerminos = -1;
         this.opcionPrincipal = 0;
     }
 
@@ -24,10 +28,38 @@ public class Controller {
      */
     private int validarEntero(){
         while (!scanner.hasNextInt()) {
-            System.out.println("Ingrese un número entero válido.");
+            System.out.println("Ingrese un numero entero valido.");
             scanner.next();
         }
-        return scanner.nextInt();
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+        return numero;
+    }
+
+    /**
+     * Valida que el usuario ingrese un número entero positivo.
+     * @return El número entero positivo ingresado por el usuario.
+     */
+    private int validarEnteroPositivo() {
+        int numero = validarEntero();
+        while (numero <= 0) {
+            System.out.print("Ingrese un numero positivo");
+            numero = validarEntero();
+        }
+        return numero;
+    }
+
+    /**
+     * Valida que el usuario ingrese un texto no vacío.
+     * @return El texto ingresado por el usuario.
+     */
+    private String validarTexto() {
+        String texto = scanner.nextLine();
+        while (texto == null || texto.trim().isEmpty()) {
+            System.out.print("El texto no puede estar vacio");
+            texto = scanner.nextLine();
+        }
+        return texto;
     }
 
     /**
@@ -36,8 +68,6 @@ public class Controller {
     public void iniciar() {
         System.out.println("Grupo-4");
         System.out.println("Integrantes:Toapanta.David, Urbina.Daniel, Vargas.Benjamin, Velez.Jhostyn");
-        System.out.print("Ingrese el número de términos que desea generar: ");
-        numeroTerminos = validarEntero();
 
         mostrarMenuInicial();
     }
@@ -51,6 +81,12 @@ public class Controller {
             System.out.println("0. Salir");
             System.out.println("1. Series Numericas");
             System.out.println("2. Series de Caracteres");
+            System.out.println("3. Figuras");
+            System.out.println("4. Cadenas de Caracteres");
+            System.out.println("5. Arrays");
+            System.out.println("6. Loading");
+            System.out.println("7. Recursion");
+            System.out.println("8. Autómatas");
 
             System.out.print("Seleccione una opcion: ");
             opcionPrincipal = validarEntero();
@@ -65,6 +101,24 @@ public class Controller {
                 case 2:
                     mostrarSeriesCaracteres();
                     break;
+                case 3:
+                    mostrarFiguras();
+                    break;
+                case 4:
+                    mostrarCadenasCaracteres();
+                    break;
+                case 5:
+                    mostrarArrays();
+                    break;
+                case 6:
+                    mostrarLoading();
+                    break;
+                case 7:
+                    mostrarRecursion();
+                    break;
+                case 8:
+                    mostrarAutomatas();
+                    break;
                 default:
                     System.out.println("Opcion no valida");
                     break;
@@ -73,18 +127,83 @@ public class Controller {
     }
 
     /**
+     * Muestra el menú de autómatas.
+     */
+    private void mostrarAutomatas() {
+        System.out.println("Ingrese la cadena a evaluar por el automata: ");
+        String expresion = validarTexto();
+        Automatas automatas = new Automatas(expresion);
+
+    }
+
+    /**
+     * Muestra el menú de recursión.
+     */
+    private void mostrarRecursion() {
+        System.out.println("Ingrese el valor limite para recursion: ");
+        int limite = validarEnteroPositivo();
+        Recursion recursion = new Recursion(limite);
+
+    }
+
+    /**
+     * Muestra el menú de carga.
+     */
+    private void mostrarLoading() {
+        System.out.println("Ingrese la longitud de la barra de carga: ");
+        int longitudBarra = validarEnteroPositivo();
+        Loading loading = new Loading(longitudBarra);
+    }
+
+    /**
+     * Muestra el menú de arrays.
+     */
+    private void mostrarArrays() {
+        System.out.println("Ingrese su nombre: ");
+        String nombre = validarTexto();
+        System.out.println("Ingrese su apellido: ");
+        String apellido = validarTexto();
+        System.out.println("Ingrese el tamanio de la matriz: ");
+        int tamanioMatriz = validarEnteroPositivo();
+        Arrays arrays = new Arrays(nombre, apellido, tamanioMatriz);
+
+    }
+
+    /**
+     * Muestra el menú de cadenas de caracteres.
+     */
+    private void mostrarCadenasCaracteres() {
+        System.out.println("Ingrese la frase que desea analizar: ");
+        String frase = validarTexto();
+        CadenaCaracteres cadenaCaracteres = new CadenaCaracteres(frase);
+
+    }
+
+    /**
+     * Muestra el menú de figuras.
+     */
+    private void mostrarFiguras() {
+        System.out.println("Ingrese el tamanio/niveles de la figura: ");
+        int tamanio = validarEnteroPositivo();
+        Figuras figuras = new Figuras(tamanio);
+        
+    }
+
+    /**
      * Muestra las series de caracteres.
      */
     private void mostrarSeriesCaracteres() {
+        System.out.print("Ingrese el numero de terminos que desea generar: ");
+        int numeroTerminos = validarEnteroPositivo();
         SeriesCaracteres seriesCaracteres = new SeriesCaracteres(numeroTerminos);
         
         System.out.println("1. Signos alternados");
         seriesCaracteres.gr4Serie01Signosalternados();
-        System.out.println("2. Greupo de signos (+)");
+        System.out.println("2. Grupo de signos (+)");
         seriesCaracteres.gr4Serie02Gruposdesignos();
-        System.out.println("3. SGrupo de signos (+)+1");
+        System.out.println("3. Grupo de signos (+)+1");
         seriesCaracteres.gr4Serie03Gruposdesignos(); 
-        System.out.println("4. Operadpres cíclicos");
+        System.out.println("4. Operadores ciclicos");
         seriesCaracteres.gr4Serie04Operadoresciclicos();
         System.out.println("5. Indicador direccional ciclico");
         seriesCaracteres.gr4Serie05Indicadordireccionalciclico();
@@ -96,11 +215,11 @@ public class Controller {
         seriesCaracteres.gr4Serie08Letrasrepetidas();
         System.out.println("9. Letras repetidas +1");
         seriesCaracteres.gr4Serie09Letrasrepetidas();
-        System.out.println("10. Serie de letras con repetición");
+        System.out.println("10. Serie de letras con repeticion");
         seriesCaracteres.g4LetrasconRepeticion();
         System.out.println("11. Serie de grupos de hashtags");
         seriesCaracteres.g4GruposdeHashtags();
-        System.out.println("12. Serie de vocales con repetición");
+        System.out.println("12. Serie de vocales con repeticion");
         seriesCaracteres.g4VocalesRepetidas();
         System.out.println("13. Serie de letras repetidas en orden creciente");
         seriesCaracteres.g4LetrarepetidaCreciente();
@@ -110,7 +229,7 @@ public class Controller {
         seriesCaracteres.g4Bloques();
         System.out.println("16. Serie de alternancia");
         seriesCaracteres.g4Alternancia();
-        System.out.println("17. Serie de símbolos");
+        System.out.println("17. Serie de simbolos");
         seriesCaracteres.g4Simbolos();
     }
 
@@ -118,14 +237,16 @@ public class Controller {
      * Muestra las series numéricas.
      */
     private void mostrarSeriesNumericas() {
+        System.out.print("Ingrese el numero de terminos que desea generar: ");
+        int numeroTerminos = validarEnteroPositivo();
         SeriesNumericas seriesNumericas = new SeriesNumericas(numeroTerminos);
         
         System.out.println("1. Serie de Fibonacci");
-        seriesNumericas.g4Serie01FIbonacci();
+        seriesNumericas.g4Serie01Fibonacci();
         System.out.println("2. Serie de impares con ceros");
         seriesNumericas.g4Serie02ImparesCero();
         System.out.println("3. Serie de Fibonacci sobre impares");
-        seriesNumericas.g4Serie03FibonacciSobreIpares();
+        seriesNumericas.g4Serie03FibonacciSobreImpares();
         System.out.println("4. Serie de Fibonacci sobre pares");
         seriesNumericas.g4Serie04FibonacciSobrePares();
         System.out.println("5. Serie de numeros primos");
@@ -133,9 +254,9 @@ public class Controller {
         System.out.println("6. Serie de cuadrados perfectos");
         seriesNumericas.g4Serie06CuadradosPerfectos();
         System.out.println("7. Serie de progresion aritmetica");
-        seriesNumericas.g4Serie07ProgresionArimetica();
+        seriesNumericas.g4Serie07ProgresionAritmetica();
         System.out.println("8. Serie de progresion aritmética 2");
-        seriesNumericas.g4Serie08ProgresionArimetica();
+        seriesNumericas.g4Serie08ProgresionAritmetica();
         System.out.println("9. Serie de potencias de 2");
         seriesNumericas.g4Serie09Potencia();
         System.out.println("10. Serie de potencias de 3");

@@ -21,7 +21,7 @@ public class SeriesNumericas {
     /**
      * Método para generar la serie de Fibonacci hasta n términos.
      */
-    public void g4Serie01FIbonacci(){
+    public void g4Serie01Fibonacci(){
         int a = 0, b = 1;
         for (int i = 0; i < this.numeroTerminos; i++) {
             System.out.print(a + " ");
@@ -48,7 +48,7 @@ public class SeriesNumericas {
      * Método para generar una serie que combina la serie de Fibonacci y los números impares hasta n términos.
      */
 
-    public void g4Serie03FibonacciSobreIpares(){
+    public void g4Serie03FibonacciSobreImpares(){
         int a = 0, b = 1, impar = 1;
         for (int i = 0; i < this.numeroTerminos; i++) {
             System.out.print(a + "/" + impar + (i < this.numeroTerminos - 1 ? ", " : "\n"));
@@ -106,7 +106,7 @@ public class SeriesNumericas {
      * Método para generar una progresión aritmética con diferencia común de 3 hasta n términos.
      */
 
-    public void g4Serie07ProgresionArimetica(){
+    public void g4Serie07ProgresionAritmetica(){
         int val=1;
         for (int i = 0; i < this.numeroTerminos; i++) {
             System.out.print(val + (i < this.numeroTerminos - 1 ? ", " : "\n"));
@@ -117,7 +117,7 @@ public class SeriesNumericas {
      * Método para generar una progresión aritmética con diferencia común de 5 hasta n términos.
      */
 
-    public void g4Serie08ProgresionArimetica(){
+    public void g4Serie08ProgresionAritmetica(){
         int val=3;
         for (int i = 0; i < this.numeroTerminos; i++) {
             System.out.print(val + (i < this.numeroTerminos - 1 ? ", " : "\n"));
