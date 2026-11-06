@@ -158,12 +158,57 @@ public class Controller {
      * Muestra el menú de autómatas.
      */
     private void mostrarAutomatas() {
-        System.out.println("Ingrese la cadena a evaluar por el automata: ");
-        String expresion = validarTexto();
-        Automatas automatas = new Automatas(expresion);
-
+        Automatas automatas = new Automatas();
+        int opcion;
+        do {
+            System.out.println("\n Menu Automatas");
+            System.out.println("0. Volver");
+            System.out.println("1. a*b+c");
+            System.out.println("2. ab+ca");
+            System.out.println("3. a+b+c+ o 1+0+1*");
+            System.out.println("4. Decimal");
+            System.out.println("5. Variable Java");
+            System.out.println("6. Tokens");
+            System.out.println("7. Clave");
+            System.out.print("Seleccione una opcion: ");
+            opcion = validarEntero();
+            if (opcion >= 1 && opcion <= 7) {
+                System.out.print("Ingrese la cadena a evaluar: ");
+                String cadena = scanner.nextLine();
+                boolean valida = false;
+                switch (opcion) {
+                    case 1:
+                        valida = automatas.g4ValidarA01_aStarbPlusc(cadena);
+                        break;
+                    case 2:
+                        valida = automatas.g4ValidarA02_abPlusca(cadena);
+                        break;
+                    case 3:
+                        valida = automatas.g4ValidarA03_Variante(cadena);
+                        break;
+                    case 4:
+                        valida = automatas.g4ValidarA04Decimal(cadena);
+                        break;
+                    case 5:
+                        valida = automatas.g4ValidarA05VariableJava(cadena);
+                        break;
+                    case 6:
+                        valida = automatas.g4ValidarA06TokensLenguaje(cadena);
+                        break;
+                    case 7:
+                        valida = automatas.g4ValidarA07Clave(cadena);
+                        break;
+                }
+                if (valida) {
+                    System.out.println("Cadena valida");
+                } else {
+                    System.out.println("Cadena invalida");
+                }
+            } else if (opcion != 0) {
+                System.out.println("Opcion invalida");
+            }
+        } while (opcion != 0);
     }
-
     /**
      * Muestra el menú de recursión.
      */
@@ -187,16 +232,46 @@ public class Controller {
      * Muestra el menú de arrays.
      */
     private void mostrarArrays() {
-        System.out.println("Ingrese su nombre: ");
-        String nombre = validarTexto();
-        System.out.println("Ingrese su apellido: ");
-        String apellido = validarTexto();
-        System.out.println("Ingrese el tamanio de la matriz: ");
+        System.out.print("Ingrese el tamanio de la matriz: ");
         int tamanioMatriz = validarEnteroPositivo();
-        Arrays arrays = new Arrays(nombre, apellido, tamanioMatriz);
-
+        Arrays arrays = new Arrays("Benjamin", "Vargas", tamanioMatriz);
+        int opcion;
+        do {
+            System.out.println("\n Menu Arrays");
+            System.out.println("0. Volver");
+            System.out.println("1. Carga de palabras");
+            System.out.println("2. Iniciales B y V");
+            System.out.println("3. Plano cartesiano f(x)=2x");
+            System.out.println("4. Matriz en X");
+            System.out.println("5. Matriz aleatoria");
+            System.out.print("Seleccione una opcion: ");
+            opcion = validarEntero();
+            switch (opcion) {
+                case 0:
+                    break;
+                case 1:
+                    arrays.g4MostrarCargaNombre(scanner);
+                    scanner.nextLine();
+                    break;
+                case 2:
+                    arrays.g4MostrarInicialesMatriz(scanner);
+                    scanner.nextLine();
+                    break;
+                case 3:
+                    arrays.g4GraficarFuncionNombre();
+                    break;
+                case 4:
+                    arrays.g4MostrarMatrizXNombreApellido();
+                    break;
+                case 5:
+                    arrays.g4MostrarMatrizRandomNombreCompleto();
+                    break;
+                default:
+                    System.out.println("Opcion invalida");
+                    break;
+            }
+        } while (opcion != 0);
     }
-
     /**
      * Muestra el menú de cadenas de caracteres.
      */
@@ -206,6 +281,7 @@ public class Controller {
         int intentos=0;
         String respuesta="";
         CadenaCaracteres cadenaCaracteres = new CadenaCaracteres(frase);
+        
 
         System.out.println("Frase ingresada: " + frase);
         System.out.println("Contar vocales");
