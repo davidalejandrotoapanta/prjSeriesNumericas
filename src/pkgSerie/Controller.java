@@ -1,14 +1,14 @@
 package pkgSerie;
 
 import java.util.Scanner;
-import pkgSerie.pkgSeriesCaracteres.SeriesCaracteres;
-import pkgSerie.pkgSeriesNumericas.SeriesNumericas;
+import pkgSerie.pkgArrays.Arrays;
+import pkgSerie.pkgAutomatas.Automatas;
+import pkgSerie.pkgCadenaCaracteres.CadenaCaracteres;
+import pkgSerie.pkgFiguras.Figuras;
 import pkgSerie.pkgLoading.Loading;
 import pkgSerie.pkgRecursion.Recursion;
-import pkgSerie.pkgAutomatas.Automatas;
-import pkgSerie.pkgFiguras.Figuras;
-import pkgSerie.pkgCadenaCaracteres.CadenaCaracteres;
-import pkgSerie.pkgArrays.Arrays;
+import pkgSerie.pkgSeriesCaracteres.SeriesCaracteres;
+import pkgSerie.pkgSeriesNumericas.SeriesNumericas;
 
 public class Controller {
     private Scanner scanner;
@@ -244,7 +244,19 @@ public class Controller {
         System.out.println("Ingrese el tamanio/niveles de la figura: ");
         int tamanio = validarEnteroPositivo();
         Figuras figuras = new Figuras(tamanio);
-        
+
+        System.out.println("14. Triangulo de Pascal");
+        figuras.g4MostrarTrianguloPascal();
+        System.out.println("15. Triangulo rectángulo de Pascal");
+        figuras.g4MostrarTrianguloRectanguloPascal();
+        System.out.println("16. X con + y -");
+        figuras.g4MostrarFigura16();
+        System.out.println("16. X con 1 y 0");
+        figuras.g4MostrarFigura17();
+        System.out.println("18. Triangulo rectángulo de Pascal con 2 en la diagonal");
+        figuras.g4MostrarTrianguloRectanguloPascalCon2();
+        System.out.println("18. Triangulo rectángulo de Pascal con caracteres");
+        figuras.g4MostrarTrianguloRectanguloPascalConCaracteres();
     }
 
     /**
