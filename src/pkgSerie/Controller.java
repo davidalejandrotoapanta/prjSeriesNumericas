@@ -130,7 +130,7 @@ public class Controller {
      * Muestra el menú de autómatas.
      */
     private void mostrarAutomatas() {
-        Automatas automatas = new Automatas("a");
+        Automatas automatas = new Automatas();
         int opcion;
         do {
             System.out.println("\n Menu Automatas");

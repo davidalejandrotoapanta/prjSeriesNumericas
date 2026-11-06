@@ -3,6 +3,9 @@ package pkgSerie.pkgAutomatas;
 public class Automatas {
     private String expresionValidar;
 
+    public Automatas() {
+    }
+
     /**
      * Constructor con validación para Autómatas y Gramáticas.
      * @param expresionValidar
