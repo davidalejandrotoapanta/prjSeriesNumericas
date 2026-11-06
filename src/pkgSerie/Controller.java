@@ -214,9 +214,20 @@ public class Controller {
      */
     private void mostrarRecursion() {
         System.out.println("Ingrese el valor limite para recursion: ");
-        int limite = validarEnteroPositivo();
+        String limite = validarTexto();
         Recursion recursion = new Recursion(limite);
-
+        System.out.println("1. Recursion Factorial");
+        recursion.g4Recursion01Factorial();
+        System.out.println("2. Recursion Suma");
+        recursion.g4Recursion02Suma();
+        System.out.println("3. Recursion Multiplicacion");
+        recursion.g4Recursion03mult();
+        System.out.println("4. Recursion Potencia");
+        recursion.g4Recursion04Potencia();
+        System.out.println("5. Recursion Conteo");
+        recursion.g4Recursion05Conteo();
+        System.out.println("6. Recursion Conteo Regresivo");
+        recursion.grRecursion06ContoReg();
     }
 
     /**
@@ -339,9 +350,30 @@ public class Controller {
      */
     private void mostrarFiguras() {
         System.out.println("Ingrese el tamanio/niveles de la figura: ");
-        int tamanio = validarEnteroPositivo();
+        String tamanio = validarTexto();
         Figuras figuras = new Figuras(tamanio);
-
+        System.out.println("1. Triangulo de asteriscos");
+        figuras.gr4Figura03Triangulo();
+        System.out.println("2. Triangulo invertido de asteriscos");
+        figuras.gr4Figura04Trianguloin();
+        System.out.println("3. Piramide invertida de asteriscos");
+        figuras.gr4Figura05Piramidein();
+        System.out.println("4. Piramide de asteriscos");
+        figuras.gr4Figura06Piramide();
+        System.out.println("5. Escalera");    
+        figuras.gr4Figura07Escalera();
+        System.out.println("6. Escalera invertida");
+        figuras.gr4Figura08Escalerain();
+        System.out.println("7. Escaleras");
+        figuras.gr4Figura09Escaleras();
+        System.out.println("8. Escaleras con signos alternados");
+        figuras.gr4Figura10Simboloescalonado();
+        System.out.println("9. Escalera sumando _");
+        figuras.gr4Figura11EscaleraSumando();
+        System.out.println("10. Piramide de números invertida");
+        figuras.gr4Figura12PiramideNumerosin();
+        System.out.println("11. Piramide de números");
+        figuras.gr4Figura13PiramideNumeros();
         System.out.println("14. Triangulo de Pascal");
         figuras.g4MostrarTrianguloPascal();
         System.out.println("15. Triangulo rectángulo de Pascal");
