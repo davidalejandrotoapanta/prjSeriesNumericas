@@ -226,6 +226,27 @@ public class Controller {
         System.out.println("Ingrese la longitud de la barra de carga: ");
         int longitudBarra = validarEnteroPositivo();
         Loading loading = new Loading(longitudBarra);
+        loading.g4L01_indicadorCargaRotacional();
+        loading.g4L02_caracterCargando('#');
+        loading.g4L03_desplazarCaracter('-');
+        loading.g4L04_waitingIdaYVuelta();
+        loading.g4L05_barraPuntaCambiante();
+        loading.g4L06_barraCambianteDeIzquierdaADerecha();
+        loading.g4L07_barraRotacional();
+        System.out.println("\n8. Carga mostrando el nombre letra a letra:");
+        System.out.print("Ingrese su nombre y apellido: ");
+        String nombreL08 = validarTexto();
+        loading.g4L08_cargaLetraaLetra(nombreL08);
+        System.out.println("\n9. Carga mostrando solo una letra del nombre:");
+        System.out.print("Ingrese su nombre y apellido: ");
+        String nombreL09 = validarTexto();
+        loading.g4L09_cargaUnaLetra(nombreL09);
+        System.out.println("\n10. Carga de archivo:");
+        loading.g4L10_cargaArchivo();
+        loading.g4L11_cargaSimetricas();
+        loading.g4L11_cargasDeSonido();
+        loading.g4L12_figuraDesplazable();
+
     }
 
     /**
