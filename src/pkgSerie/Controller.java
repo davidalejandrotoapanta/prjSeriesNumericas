@@ -1,14 +1,14 @@
 package pkgSerie;
 
 import java.util.Scanner;
-import pkgSerie.pkgSeriesCaracteres.SeriesCaracteres;
-import pkgSerie.pkgSeriesNumericas.SeriesNumericas;
+import pkgSerie.pkgArrays.Arrays;
+import pkgSerie.pkgAutomatas.Automatas;
+import pkgSerie.pkgCadenaCaracteres.CadenaCaracteres;
+import pkgSerie.pkgFiguras.Figuras;
 import pkgSerie.pkgLoading.Loading;
 import pkgSerie.pkgRecursion.Recursion;
-import pkgSerie.pkgAutomatas.Automatas;
-import pkgSerie.pkgFiguras.Figuras;
-import pkgSerie.pkgCadenaCaracteres.CadenaCaracteres;
-import pkgSerie.pkgArrays.Arrays;
+import pkgSerie.pkgSeriesCaracteres.SeriesCaracteres;
+import pkgSerie.pkgSeriesNumericas.SeriesNumericas;
 
 public class Controller {
     private Scanner scanner;
@@ -29,7 +29,7 @@ public class Controller {
     private int validarEntero(){
         while (!scanner.hasNextInt()) {
             System.out.println("Ingrese un numero entero valido.");
-            scanner.next();
+            scanner.nextLine();
         }
         int numero = scanner.nextInt();
         scanner.nextLine();
@@ -43,7 +43,7 @@ public class Controller {
     private int validarEnteroPositivo() {
         int numero = validarEntero();
         while (numero <= 0) {
-            System.out.print("Ingrese un numero positivo");
+            System.out.println("Ingrese un numero positivo");
             numero = validarEntero();
         }
         return numero;
@@ -56,10 +56,38 @@ public class Controller {
     private String validarTexto() {
         String texto = scanner.nextLine();
         while (texto == null || texto.trim().isEmpty()) {
-            System.out.print("El texto no puede estar vacio");
+            System.out.println("El texto no puede estar vacio");
             texto = scanner.nextLine();
         }
         return texto;
+    }
+
+    /**
+     * Valida que el usuario ingrese una vocal válida.
+     * @return La vocal ingresada por el usuario.
+     */
+    private char validarVocal() {
+        char vocal = Character.toLowerCase(scanner.next().charAt(0));
+        while (vocal != 'a' && vocal != 'e' && vocal != 'i' && vocal != 'o' && vocal != 'u') {
+            System.out.println("Ingrese una vocal valida");
+            vocal = Character.toLowerCase(scanner.next().charAt(0));
+        }
+        scanner.nextLine();
+        return vocal;
+    }
+
+    /**
+     * Valida que el usuario ingrese una letra válida.
+     * @return La letra ingresada por el usuario.
+     */
+    private char validarLetra() {
+        char letra = Character.toLowerCase(scanner.next().charAt(0));
+        while (letra == '\n' || letra == ' ') {
+            System.out.println("Ingrese una letra valida");
+            letra = Character.toLowerCase(scanner.next().charAt(0));
+        }
+        scanner.nextLine();
+        return letra;
     }
 
     /**
@@ -250,8 +278,39 @@ public class Controller {
     private void mostrarCadenasCaracteres() {
         System.out.println("Ingrese la frase que desea analizar: ");
         String frase = validarTexto();
+        int intentos=0;
+        String respuesta="";
         CadenaCaracteres cadenaCaracteres = new CadenaCaracteres(frase);
         
+
+        System.out.println("Frase ingresada: " + frase);
+        System.out.println("Contar vocales");
+        cadenaCaracteres.g4ContarVocales();
+        System.out.println("Contar consonantes");
+        cadenaCaracteres.g4ContarConsonantes();
+        System.out.println("Eliminar vocal");
+        System.out.println("Ingrese la vocal que desea eliminar de la frase: ");
+        char vocal = validarVocal();
+        cadenaCaracteres.g4EliminarVocal(vocal);
+        System.out.println("Eliminar letra");
+        System.out.println("Ingrese la letra que desea eliminar de la frase: ");
+        char letra = validarLetra();
+        cadenaCaracteres.g4EliminarLetra(letra);
+        System.out.println("Invertir frase con vocales en mayusculas");
+        cadenaCaracteres.g4InvertirFraseConVocalesMayusculas();
+        System.out.println("Invertir frase con consonantes en mayusculas");
+        cadenaCaracteres.g4InvertirFraseConConsonantesMayusculas();
+        System.out.println("Cambiar frase a mayusculas sin la letra J");
+        cadenaCaracteres.g4CambiarFraseMayusculaSinJ();
+        System.out.println("Adivinar anagrama");
+        int posicion = cadenaCaracteres.g4ObtenerPalabraAleatoria();
+        do{
+            System.out.println("Ingrese el anagrama de la palabra:");
+            respuesta = validarTexto();
+            intentos++;
+        }while(!cadenaCaracteres.g4AdivinarAnagrama(posicion, respuesta) && intentos < 3);
+        System.out.println("Mayusculas y minusculas alternadas");
+        cadenaCaracteres.g4MayusculasAlternadas();
     }
 
     /**
@@ -261,7 +320,19 @@ public class Controller {
         System.out.println("Ingrese el tamanio/niveles de la figura: ");
         int tamanio = validarEnteroPositivo();
         Figuras figuras = new Figuras(tamanio);
-        
+
+        System.out.println("14. Triangulo de Pascal");
+        figuras.g4MostrarTrianguloPascal();
+        System.out.println("15. Triangulo rectángulo de Pascal");
+        figuras.g4MostrarTrianguloRectanguloPascal();
+        System.out.println("16. X con + y -");
+        figuras.g4MostrarFigura16();
+        System.out.println("16. X con 1 y 0");
+        figuras.g4MostrarFigura17();
+        System.out.println("18. Triangulo rectángulo de Pascal con 2 en la diagonal");
+        figuras.g4MostrarTrianguloRectanguloPascalCon2();
+        System.out.println("18. Triangulo rectángulo de Pascal con caracteres");
+        figuras.g4MostrarTrianguloRectanguloPascalConCaracteres();
     }
 
     /**
