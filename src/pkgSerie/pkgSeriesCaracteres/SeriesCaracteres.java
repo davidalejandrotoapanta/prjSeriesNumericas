@@ -56,6 +56,15 @@ public class SeriesCaracteres {
             }
             System.out.print(", ");
 
+            if (i == this.numeroTerminos - 1) {
+                break;
+            }
+
+            if (a > Integer.MAX_VALUE - b) {
+                System.out.println("\nAviso: se detuvo la serie para evitar el desbordamiento de enteros.");
+                return;
+            }
+
             int c = a + b;
             a = b;
             b = c;
@@ -123,7 +132,8 @@ public class SeriesCaracteres {
         for (int i = 0; i < this.numeroTerminos; i++) {
             char letra = (char) ('a' + i);
 
-            for (int j = 0; j < 2 * (i + 1); j++) {
+            long repeticiones = 2L * (i + 1L);
+            for (long j = 0; j < repeticiones; j++) {
                 System.out.print(letra);
             }
             System.out.print(", ");
@@ -138,7 +148,8 @@ public class SeriesCaracteres {
         for (int i = 0; i < this.numeroTerminos; i++) {
             char letra = (char) ('a' + i);
 
-            for (int j = 0; j < 2 * i + 1; j++) {
+            long repeticiones = 2L * i + 1;
+            for (long j = 0; j < repeticiones; j++) {
                 System.out.print(letra);
             }
             System.out.print(", ");
